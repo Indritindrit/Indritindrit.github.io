@@ -1,0 +1,78 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body {
+ background: #f9e933;
+}
+header, main, footer {
+ min-width: 855px;
+ padding: 10px;
+}
+header .container, main .container, footer .container {
+ max-width: 855px;
+ margin: auto;
+}
+header {
+ background: white;
+ overflow: auto;
+}
+main {
+ background: white;
+ overflow: auto;
+}
+ h1 {
+ color: orangered;
+ font-family: 'Bitter', serif;
+ float: left;
+ width: 570px;
+ font-size: xx-large;
+}
+header nav {
+ float: right;
+ width: 285px;
+}
+
+main .left {
+  float: left;
+  width: 570px;
+}
+
+main .right {
+  float: right;
+  width: 285px;
+}
+
+footer .left {
+  float: left;
+  width: 570px;
+}
+
+footer .sitemap {
+  float: right;
+  width: 285px;
+  font-size: x-large;
+}
+footer .sitemapleft {
+  float: left;
+  font-size: large;
+}
+footer .sitemapright {
+  float: right;
+  font-size: large;
+}
+
+a {
+ color: cornflowerblue;
+ text-decoration: none; /* remove the default underline */
+}
+a:visited {
+ color: tomato;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+ h2{
+	font-size: x-large;
+}
