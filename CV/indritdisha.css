@@ -1,0 +1,245 @@
+* {
+	box-sizing: border-box;
+}
+
+@font-face {
+   font-family: lucidaCalligraphy;
+   src: url(lucidaCalligraphy/LCALLIG.ttf);
+}
+
+html {font-family: "Lucida Sans", sans-serif;}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+header, footer {
+	background-color: #004a43;
+	padding: 1px;
+	width: 100%;
+	text-align: center;
+	color: white; 
+	font-family: lucidaCalligraphy, "Lucida Sans", sans-serif;
+}
+
+header {margin-bottom: 8px;}
+
+/* Per te hequr float: left; elementeve qe vijne pas .row */
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+/* Ndarja e pjeseve me model kartash */
+.card, .profile_card {
+	margin: 0px 8px 16px;
+	padding-bottom: 8px;
+	background-color: white;
+	-webkit-box-shadow: 2px 5px 10px grey; /* Chrome, Safari, Opera */
+	-moz-box-shadow: 2px 5px 10px grey; /* Firefox */
+	box-shadow: 2px 5px 10px grey; /* Sintaksa standarde*/
+}
+
+.card {padding-top: 8px;}
+
+.profile_card h2 {
+	font-family: lucidaCalligraphy, "Lucida Sans", sans-serif;
+	padding-left: 8px;
+}
+
+/* Vendosim cdo element ne nje .container */
+.container {padding: 0px 16px;}
+
+/* Stilizojme elementet p te dy kartave te ndryshme
+ * qe te jene ne vije te drejte */
+.edu p {
+	margin: 0;
+	padding: 4px 0px 0px 36px;
+}
+
+.profile p {padding-left: 8px;}
+
+/* Intervali i kohes te pjesa e Edukimit */
+.interval {
+	font-weight: bold;
+	padding: 0px 8px;
+    color: teal;
+}
+
+/* Paragrafi te Interesat/Hobi */
+.interesting {
+	padding-left: 36px;
+	padding-right: 36px;
+	text-indent: 24px;
+	text-align: justify;
+	text-align-last: left;
+}
+
+img.profile {
+	position: relative;
+	left: 20%;
+	width: 50%;
+	border-bottom-left-radius: 25%;
+	border-bottom-right-radius: 25%;
+	-webkit-filter: drop-shadow(-3px 5px 5px gray);
+	filter: drop-shadow(-3px 5px 5px gray);
+	transition: filter 0.2s;
+}
+
+/* Per dritaret e vogla dhe telefonat celulare */
+
+/* Perdorim modelin e ndarjes se faqes ne 12 shtylla */
+[class*="col-"] {
+	float: left;
+	width: 100%;
+}
+
+/* Shiritat e progresit ne gjuhet e programimit */
+.progress {
+	display: -webkit-flex;
+	display: flex;
+	width: 100%;
+	padding-right: 24px;
+	margin-bottom: 8px;
+}
+
+.progress > div:first-child {
+	-webkit-flex: 1;
+	flex: 1;
+	text-align: left;
+}
+
+.progress_container {
+	-webkit-flex: 2;
+	flex: 2;
+	background-color: rgba(240, 240, 240, 1);
+	border-radius: 12px;
+	margin: auto;
+}
+
+/* Animimi i shiritave te progresit */
+@keyframes progress_fill {
+	from {width: 0%;}
+	to {width: attr(width); visibility: visible;}
+}
+
+.progressbar {
+	background-color: teal;
+	border-radius: 12px;
+	visibility: hidden;
+	animation: progress_fill 0.75s ease-out 1s;
+	animation-fill-mode: forwards;
+}
+
+.level {
+	-webkit-flex: 2;
+	flex: 2;
+	font-size: 1em;
+	margin: auto;
+}
+/***********************************/
+
+ul.skills {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 36px;
+}
+
+ul.skills li {
+    padding: 5px 8px;
+    margin-bottom: 8px;
+    background-color: teal;
+    color: white;
+    border-radius: 5px;
+    -moz-box-shadow: 1px 5px 3px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 1px 5px 3px rgba(0,0,0,0.15);
+    box-shadow: 1px 5px 3px rgba(0,0,0,0.15);
+}
+/***********************************/
+
+
+/* Per desktop: */
+@media screen and (min-width: 768px) {
+
+.col-4 {width: 33.33%;}
+.col-8 {width: 66.66%;}
+
+ul.skills {
+	-webkit-columns: 2; /* Chrome, Safari, Opera */
+    -moz-columns: 2; /* Firefox */
+    columns: 2; /* Sintaksa standarde*/
+    -webkit-column-gap: 60px;
+    -moz-column-gap: 60px;
+    column-gap: 60px;
+    padding: 0px 60px;
+}
+
+.progress {
+	padding-right: 48px;
+	margin-bottom: 8px;
+}
+
+.progress > div:first-child {
+	padding-left: 36px;
+	padding-right: 36px;
+	font-family: calibri;
+	font-size: 1.1em;
+}
+
+.progress_container, .level {
+	-webkit-flex: 5;
+	flex: 5;
+}
+
+}
+/***********************************/
+
+
+/* Efektet :hover te elementeve */
+h2:hover {color: #006666;}
+
+.interval:hover {color: #004a43;}
+
+header:hover, footer:hover {background-color: #003333;}
+
+.progressbar:hover {background-color: #004a43;}
+
+ul.skills li:hover {
+    background-color: #004a43;
+    -moz-box-shadow: 1px 5px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 1px 5px 3px rgba(0,0,0,0.5);
+    box-shadow: 1px 5px 3px rgba(0,0,0,0.5);
+}
+
+img.profile:hover {
+	-webkit-filter: drop-shadow(-6px 10px 10px gray);
+	filter: drop-shadow(-6px 10px 10px gray);
+}
+/***********************************/
+
+/* Stilizimi i ikonave para tekstit */
+i.icons {margin-right: 12px;}
+
+i.large {
+	font-size: 1.5em;
+}
+
+/***********************************/
+
+h2 {
+	color: #004a43;
+	margin-bottom: 12px;
+	margin-top: 0px;
+}
+
+p {
+	color: black;
+	font-family: calibri;
+	font-size: 1.1em;
+}
+
+.teal {color: teal;}
+
+.white {color: white;}
